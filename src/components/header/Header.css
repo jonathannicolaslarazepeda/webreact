@@ -1,0 +1,81 @@
+
+.sidebar {
+  position: relative;
+  overflow: hidden;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 30%;
+  height: 100vw;
+  position: fixed;
+}
+
+.animado {
+  position: absolute;
+  width: 51%;
+  height: 0%;
+  background-color: #fff6bc;
+  animation-delay: 1s;
+  animation: alargar 2s forwards ease;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+@keyframes alargar {
+  from {
+    height: 0px;
+  }
+
+  to {
+    height: 27%;
+  }
+}
+
+.logo img {
+  margin-top: 10%;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  width: 100%;
+  height: auto;
+
+}
+
+.description {
+  font-size: small;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.menu a {
+  display: block;
+  text-decoration: none;
+  color: #555;
+  font-weight: normal;
+  margin-bottom: 12px;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #000;
+}
+
+.social {
+  line-height: 1.6;
+  margin-top: 30px;
+}
+
+.social a {
+  margin-right: 0px;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+  transition: transform 0.3s ease;
+}
+
+.social a:hover {
+  opacity: 1;
+  transform: scale(1.03);
+}
