@@ -291,9 +291,9 @@ body {
   break-inside: avoid;
 }
 
-#contact-name,
-#contact-email,
-#contact-subject {
+.Name,
+.Email,
+.Subject {
   justify-content: center;
   width: 100%;
   background-color: #fff6bc;
@@ -302,7 +302,7 @@ body {
   padding: 10px;
 }
 
-#contact-content {
+.Comment {
   justify-content: center;
   width: 100%;
   height: 200px;
@@ -326,7 +326,7 @@ body {
   visibility: hidden;
 }
 
-#enviar {
+.enviar {
   align-self: center;
   background-color: grey;
   color: white;
@@ -338,13 +338,13 @@ body {
   transition: all 0.2s ease;
 }
 
-#enviar:hover {
+.enviar:hover {
   background-color: black;
   color: white;
   transform: scale(1.05);
 }
 
-#enviar:active {
+.enviar:active {
   transform: scale(0.97);
 }
 

@@ -41,7 +41,7 @@ function CommentsList() {
     const addComment = (e) => {
         e.preventDefault();
 
-        const User = e.target.User.value;
+        const User = e.target.Name.value;
         const Email = e.target.Email.value;
         const Subject = e.target.Subject.value;
         const Comment = e.target.Comment.value;
@@ -75,12 +75,12 @@ function CommentsList() {
 
                 <form onSubmit={addComment} ref={refForm}>
 
-                    <input name="User" placeholder="Nombre" />
-                    <input name="Email" placeholder="Email" />
-                    <input name="Subject" placeholder="Asunto" />
-                    <textarea name="Comment" placeholder="Comentario" />
+                    <input name="Name" className="Name" placeholder="Name" />
+                    <input name="Email" className="Email" placeholder="Email" />
+                    <input name="Subject" className="Subject" placeholder="Asunto" />
+                    <textarea name="Comment" className="Comment" placeholder="Comentario" />
 
-                    <button type="submit">Enviar</button>
+                    <button name="enviar" className="enviar" type="submit">Enviar</button>
                 </form>
             </div>
 
@@ -95,7 +95,7 @@ function CommentsList() {
                         <p>Asunto: {comment.Subject}</p>
                         <p>Mensaje: {comment.Comment}</p>
 
-                        <button onClick={() => removeComments(comment.key)}>
+                        <button name="btn-delete" className="btn-delete" onClick={() => removeComments(comment.key)}>
                             Borrar
                         </button>
                     </div>
