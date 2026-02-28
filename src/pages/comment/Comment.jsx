@@ -40,20 +40,20 @@ function Comment() {
     const addComment = (e) => {
         e.preventDefault();
 
-        const User = e.target.Name.value;
-        const Email = e.target.Email.value;
-        const Subject = e.target.Subject.value;
-        const Comment = e.target.Comment.value;
+        const user = e.target.name.value;
+        const email = e.target.email.value;
+        const subject = e.target.subject.value;
+        const comment = e.target.comment.value;
 
-        CommentsService.addComment(User, Email, Subject, Comment)
+        CommentsService.addComment(user, email, subject, comment)
             .then((res) => {
 
                 const newComment = {
                     key: res.key,
-                    User,
-                    Email,
-                    Subject,
-                    Comment
+                    user,
+                    email,
+                    subject,
+                    comment
                 };
 
                 setComments(prev => [...prev, newComment]);
@@ -69,14 +69,14 @@ function Comment() {
         <div className="contact">
 
             <div className="contact-left">
-                <h2>Contact & Location</h2>
+                <h2>Comments</h2>
 
                 <form onSubmit={addComment} ref={refForm}>
 
-                    <input name="Name" className="Name" placeholder="Name" />
-                    <input name="Email" className="Email" placeholder="Email" />
-                    <input name="Subject" className="Subject" placeholder="Asunto" />
-                    <textarea name="Comment" className="Comment" placeholder="Comentario" />
+                    <input name="name" className="name" placeholder="Nombre" />
+                    <input name="email" className="email" placeholder="Email" />
+                    <input name="subject" className="subject" placeholder="Asunto" />
+                    <textarea name="comment" className="comment" placeholder="Comentario" />
 
                     <button name="enviar" className="enviar" type="submit">Enviar</button>
                 </form>
@@ -88,10 +88,10 @@ function Comment() {
                 {comments.map((comment) => (
                     <div key={comment.key}>
                         <hr />
-                        <p>Remitente: {comment.User}</p>
-                        <p>Email: {comment.Email}</p>
-                        <p>Asunto: {comment.Subject}</p>
-                        <p>Mensaje: {comment.Comment}</p>
+                        <p>Remitente: {comment.user}</p>
+                        <p>Email: {comment.email}</p>
+                        <p>Asunto: {comment.subject}</p>
+                        <p>Mensaje: {comment.comment}</p>
 
                         <button name="btn-delete" className="btn-delete" onClick={() => removeComments(comment.key)}>
                             Borrar

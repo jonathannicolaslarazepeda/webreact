@@ -24,7 +24,6 @@ const Contact = () => {
                 <h4>Contact Email or Telephone</h4>
                 <p>contact@hbattoilustration.com</p>
                 <p>+34 623 123 456 789</p>
-
                 <p> </p>
                 <p> </p>
                 <h4>Social Media</h4>

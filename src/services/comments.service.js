@@ -7,12 +7,12 @@ const getAllComments = () => {
   return get(dbRef);
 };
 
-const addComment = (User, Email, Subject, Comment) => {
+const addComment = (user, email, subject, comment) => {
   return push(dbRef, {
-    User,
-    Email,
-    Subject,
-    Comment
+    user,
+    email,
+    subject,
+    comment
   });
 };
 
