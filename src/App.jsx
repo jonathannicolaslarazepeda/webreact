@@ -5,7 +5,7 @@ import Home from './pages/home/Home';
 import About from './pages/about/About';
 import Contact from './pages/contact/Contact';
 import './index.css';
-import CommentsList from './pages/contact/Contact';
+import Comment from './pages/comment/Comment';
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="comment" element={<Comment />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

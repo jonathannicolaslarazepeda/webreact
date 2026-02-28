@@ -4,8 +4,7 @@ const Footer = () => {
     return (
         <footer>
             <div className="footer">
-                <p>Web Copyright © 2025. All rights reserved.</p>
-                <p>Privacy Policy and Cookies | Terms of Sale</p>
+                <p>Web Copyright © 2025. All rights reserved. Privacy Policy and Cookies | Terms of Sale</p>
                 <div className="footer-links">
                     <a href="https://github.com/hbatto" target="_blank" rel="noopener noreferrer">My Github</a>
                     <span> | </span>
