@@ -27,10 +27,10 @@ const Contact = () => {
                 <p> </p>
                 <p> </p>
                 <h4>Social Media</h4>
-                <p>X</p>
-                <p>Instagram</p>
-                <p>Tik Tok</p>
-                <p>Youtube</p>
+                <p><a href="https://x.com/hbatto" target="_blank">X</a></p>
+                <p><a href="https://instagram.com/hbatto" target="_blank">Instagram</a></p>
+                <p><a href="https://tiktok.com/@hbatto" target="_blank">TikTok</a></p>
+                <p><a href="https://youtube.com/@hbatto86" target="_blank">YouTube</a></p>
             </div>
         </div>
     );

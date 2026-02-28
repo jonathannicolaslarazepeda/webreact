@@ -172,6 +172,15 @@ body {
 
 /* --- ABOUT --- */
 
+.about-text a {
+  display: block;
+  text-decoration: none;
+  color: #555;
+  font-weight: normal;
+  margin-bottom: 12px;
+  transition: color 0.3s;
+}
+
 .about {
   margin-top: 3%;
   width: 100%;

@@ -73,10 +73,11 @@ function Comment() {
 
                 <form onSubmit={addComment} ref={refForm}>
 
-                    <input name="name" className="name" placeholder="Nombre" />
-                    <input name="email" className="email" placeholder="Email" />
-                    <input name="subject" className="subject" placeholder="Asunto" />
-                    <textarea name="comment" className="comment" placeholder="Comentario" />
+                    <input name="name" className="name" placeholder="Nombre" required />
+                    <input name="email" className="email" placeholder="Email" required />
+                    <input name="subject" className="subject" placeholder="Asunto" required />
+                    <textarea name="comment" className="comment" placeholder="Comentario" required />
+
 
                     <button name="enviar" className="enviar" type="submit">Enviar</button>
                 </form>
