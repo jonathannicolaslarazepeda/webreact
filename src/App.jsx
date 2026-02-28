@@ -4,8 +4,10 @@ import Layout from './components/layout/Layout';
 import Home from './pages/home/Home';
 import About from './pages/about/About';
 import Contact from './pages/contact/Contact';
-import './index.css';
 import Comment from './pages/comment/Comment';
+import Privacy from './pages/privacy/Privacy';
+import './index.css';
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="comment" element={<Comment />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="privacy" element={<Privacy />} />
         </Route>
       </Routes>
     </BrowserRouter>

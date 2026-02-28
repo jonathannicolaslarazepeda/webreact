@@ -428,6 +428,13 @@ body {
   background-color: #f8eb94;
 }
 
+.footer a {
+  text-decoration: none;
+  color: #555;
+  font-weight: normal;
+  transition: color 0.3s;
+}
+
 @media (min-width: 700px) {
   body {
     background-image: linear-gradient(to bottom, white, #F8EC9B);
