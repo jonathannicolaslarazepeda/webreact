@@ -7,7 +7,7 @@ const Footer = () => {
             <div className="footer">
                 
                 <div className="footer-links">
-                    <p>Web Copyright © 2025. All rights reserved. <Link to="/privacy">Privacy Policy and Cookies</Link> | <a href="https://github.com/jonathannicolaslarazepeda/webreact/tree/main/src" target="_blank" rel="noopener noreferrer">My Github</a></p>
+                    <p>Web Copyright © 2025. All rights reserved. <Link to="/privacy">Privacy Policy and Cookies</Link> | <a href="https://github.com/jonathannicolaslarazepeda/webreact/tree/main/src" target="_blank" rel="noopener noreferrer">My Github</a>| Design based in <a href="https://www.cssigniter.com/themes/lense/" target="_blank" rel="noopener noreferrer"> CSSIgniter </a></p>
                 </div>
                 <div className="footer-social">
                     <i className="fa-brands fa-youtube" style={{ margin: '0 5px' }}></i>

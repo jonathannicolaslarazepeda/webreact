@@ -149,11 +149,3 @@ React & Vite documentation
 Open-source community ❤️
 
 ---
-
-If you'd like, I can also:
-
-- add **badges (build, license, version)**  
-- include **screenshots of your app**  
-- prepare a **professional GitHub portfolio README**
-
-Just tell me and I’ll generate it.
