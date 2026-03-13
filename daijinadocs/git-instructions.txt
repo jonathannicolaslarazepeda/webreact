@@ -51,3 +51,10 @@
 
       Puede ocurrir que haya cambios locales que no se han subido al respositorio. Para descartarlos
       git stash
+
+
+
+      --- SUbir al Hosting ---
+
+01.-) Creo nuevo proyecto compilado
+      npm run build
