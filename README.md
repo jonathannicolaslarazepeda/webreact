@@ -115,6 +115,11 @@ Planned improvements:
 
  - **Semantic versioning**
 
+### RSS
+
+<img width="1492" height="1020" alt="image" src="https://github.com/user-attachments/assets/71e36ade-3da4-4dce-a2a9-c8704a444843" />
+
+
 ### 🤝 Contributing
 
 Contributions are welcome!
