@@ -1,5 +1,5 @@
 import db from "../firebase";
-import { ref, get, remove, push } from "firebase/database";
+import { ref, get, remove, push, update } from "firebase/database";
 
 const dbRef = ref(db, "/webreact");
 
@@ -21,8 +21,14 @@ const removeComments = (key) => {
   return remove(dbRefComment);
 };
 
+const updateComment = (key, data) => {
+  const dbRefComment = ref(db, `/webreact/${key}`);
+  return update(dbRefComment, data);
+};
+
 export default {
   getAllComments,
   addComment,
   removeComments,
+  updateComment,
 };

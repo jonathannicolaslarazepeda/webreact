@@ -16,18 +16,18 @@ const Header = () => {
 
             <nav className="menu">
                 <Link to="/">Portafolio</Link>
+                <Link to="/notice">Notices</Link>
                 <Link to="/about">About me</Link>
                 <Link to="/comment">Comments</Link>
                 <Link to="/contact">Contact</Link>
             </nav>
 
             <div className="social">
-                <a href="https://www.youtube.com/@HBatto" target="_blank"><i className="fa-brands fa-youtube fa-xl" style={{ color: '#40454f' }}></i></a>
-                <a href="https://x.com/hbatto" target="_blank"><i className="fa-brands fa-square-twitter fa-xl" style={{ color: '#40454f' }}></i></a>
-                <a href="https://www.instagram.com/hbatto" target="_blank"><i className="fa-brands fa-instagram fa-xl"
-                    style={{ color: '#40454f' }}></i></a>
-                <a href="https://es.linkedin.com/in/jonathan-lara-4a872166" target="_blank"><i className="fa-brands fa-square-linkedin fa-xl"
-                    style={{ color: '#40454f' }}></i></a>
+                <a href="https://www.youtube.com/@HBatto" target="_blank"></a>
+                <a href="https://x.com/hbatto" target="_blank"></a>
+                <a href="https://www.instagram.com/hbatto" target="_blank"></a>
+                <a href="https://es.linkedin.com/in/jonathan-lara-4a872166" target="_blank"></a>
+                <a href="/rss.xml" target="_blank"><img src="/rss.png" alt="Feed"/></a>
             </div>
         </header>
     );
