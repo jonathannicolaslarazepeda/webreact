@@ -3,34 +3,31 @@
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      version="2.0">
 
-<channel>
+     <channel>
 
-<title>RSS de noticias de HBatto</title>
-<link>http://www.canarias7.es/rss/2.0/portada/</link>
-<description>RSS de noticias de HBatto</description>
-<language>es-ES</language>
-<ttl>60</ttl>
+          <title>RSS de noticias de HBatto</title>
+          <link>https://webreact-abdab.web.app/</link>
+          <description>RSS de noticias de HBatto</description>
+          <language>es-ES</language>
 
-<item>
-<title>Nuevo Proyecto Subido</title>
-<link>https://www.canarias7.es/cultura/musica/espacio-canarias-vivo-estrena-viernes-gran-canaria-20260311165344-nt.html</link>
-<pubDate>Tue, 10 Mar 2026 22:02:34 +0000</pubDate>
-<description>Ahora podeis ver unas muestars de los últimos proyectos de UI/UX que he participado, con diseños y pre diseños.</description>
-</item>
+          <item>
+               <title>Nuevo Proyecto Subido</title>
+               <link>https://webreact-abdab.web.app/notice</link>
+               <description>Ahora podeis ver unas muestars de los últimos proyectos de UI/UX que he
+                    participado, con diseños y pre diseños.</description>
+          </item>
 
-<item>
-<title>Nuevos Diseños de Personajes</title>
-<link>https://www.canarias7.es/cultura/musica/espacio-canarias-vivo-estrena-viernes-gran-canaria-20260311165344-nt.html</link>
-<pubDate>Tue, 10 Mar 2026 22:02:34 +0000</pubDate>
-<description> Nuevo diseños de personajes subidos.</description>
-</item>
+          <item>
+               <title>Nuevos Diseños de Personajes</title>
+               <link>https://webreact-abdab.web.app/notice</link>
+               <description> Nuevo diseños de personajes subidos.</description>
+          </item>
 
-<item>
-<title>Nuevos Diseños de Logos</title>
-<link>https://www.canarias7.es/cultura/musica/espacio-canarias-vivo-estrena-viernes-gran-canaria-20260311165344-nt.html</link>
-<pubDate>Tue, 10 Mar 2026 22:02:34 +0000</pubDate>
-<description>Nuevos Ejemplos de Logos Subidos.</description>
-</item>
+          <item>
+               <title>Nuevos Diseños de Logos</title>
+               <link>https://webreact-abdab.web.app/notice</link>
+               <description>Nuevos Ejemplos de Logos Subidos.</description>
+          </item>
 
-</channel>
+     </channel>
 </rss>
