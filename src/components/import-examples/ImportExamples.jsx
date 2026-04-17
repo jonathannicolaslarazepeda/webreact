@@ -4,34 +4,34 @@ import CommentsService from "../../services/comments.service";
 import "./ImportExamples.css";
 
 export default function ImportExamples() {
+
   const [internalJson, setInternalJson] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+
+  // 🔥 Normaliza cualquier archivo (JSON / CSV / XML)
+  const normalizeData = (item) => {
+    return {
+      user: item.user || item.name || "",
+      email: item.email || "",
+      subject: item.subject || item.year || "",
+      comment: item.comment || item.population || ""
+    };
+  };
 
   const handleImport = async () => {
     try {
       setError("");
       setLoading(true);
 
-      // Importar archivo
-const result = await importFileToInternalJson();
+      // 1. Abrir archivo
+      const result = await importFileToInternalJson();
 
-const rows = Array.isArray(result.data)
-  ? result.data
-  : [result.data];
+      setInternalJson(result);
 
-for (const item of rows) {
-  await CommentsService.addComment(
-    item.user || "",
-    item.email || "",
-    item.subject || "",
-    item.comment || ""
-  );
-}
-
-      // Confirmación
+      // 2. Confirmación
       const confirmImport = window.confirm(
-        "Se añadirán nuevos comentarios a Firebase. Continuar?"
+        "Se añadirán nuevos comentarios a Firebase. ¿Continuar?"
       );
 
       if (!confirmImport) {
@@ -39,28 +39,40 @@ for (const item of rows) {
         return;
       }
 
-      // Añadir comentarios
-      for (const item of result) {
+      // 3. Asegurar array válido
+      const rows = Array.isArray(result.data)
+        ? result.data
+        : [result.data];
+
+      // 4. Importar a Firebase
+      for (const item of rows) {
+
+        const comment = normalizeData(item);
+
+        // evitar vacíos
+        if (!comment.user && !comment.email && !comment.comment) continue;
+
         await CommentsService.addComment(
-          item.user || "",
-          item.email || "",
-          item.subject || "",
-          item.comment || ""
+          comment.user,
+          comment.email,
+          comment.subject,
+          comment.comment
         );
       }
 
-      alert("Comentarios importados 🚀");
+      alert("Comentarios importados correctamente 🚀");
 
     } catch (err) {
       if (err?.name === "AbortError") return;
 
-      setError(err.message || "File import failed");
-    }
+      setError(err.message || "Error importando archivo");
 
-    setLoading(false);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  return (
+   return (
     <>
       <h1>Import Examples</h1>
 

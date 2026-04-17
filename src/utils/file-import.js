@@ -1,45 +1,32 @@
 import { showOpenFilePicker } from "show-open-file-picker";
 import Papa from "papaparse";
 
-function xmlNodeToObject(node) {
-  const children = Array.from(node.children);
-
-  if (children.length === 0) {
-    return node.textContent?.trim() ?? "";
-  }
-
-  const result = {};
-
-  for (const child of children) {
-    const value = xmlNodeToObject(child);
-
-    if (result[child.nodeName] !== undefined) {
-      if (!Array.isArray(result[child.nodeName])) {
-        result[child.nodeName] = [result[child.nodeName]];
-      }
-      result[child.nodeName].push(value);
-    } else {
-      result[child.nodeName] = value;
-    }
-  }
-
-  return result;
+function ensureArray(data) {
+  if (!data) return [];
+  return Array.isArray(data) ? data : [data];
 }
 
 function xmlToJson(text) {
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(text, "application/xml");
-
   const errorNode = xmlDoc.querySelector("parsererror");
   if (errorNode) {
     throw new Error("XML invalid");
   }
 
-  const root = xmlDoc.documentElement;
+  const comments = xmlDoc.getElementsByTagName("comment");
 
-  return {
-    [root.nodeName]: xmlNodeToObject(root),
-  };
+  const data = Array.from(comments).map(comment => {
+    const obj = {};
+
+    Array.from(comment.children).forEach(node => {
+      obj[node.tagName] = node.textContent;
+    });
+
+    return obj;
+  });
+
+  return data;
 }
 
 function csvToJson(text) {
@@ -62,13 +49,13 @@ function getExtension(fileName) {
 function parseFileContent(extension, text) {
   switch (extension) {
     case "json":
-      return JSON.parse(text);
+      return ensureArray(JSON.parse(text));
 
     case "xml":
-      return xmlToJson(text);
+      return ensureArray(xmlToJson(text));
 
     case "csv":
-      return csvToJson(text);
+      return ensureArray(csvToJson(text));
 
     default:
       throw new Error(`Unsupported format: ${extension}`);
