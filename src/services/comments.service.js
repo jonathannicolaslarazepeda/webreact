@@ -1,4 +1,4 @@
-import db from "../firebase";
+import db from "./firebase";
 import { ref, get, remove, push, update } from "firebase/database";
 
 const dbRef = ref(db, "/webreact");
