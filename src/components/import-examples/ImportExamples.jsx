@@ -3,7 +3,7 @@ import { importFileToInternalJson } from "../../utils/file-import";
 import CommentsService from "../../services/comments.service";
 import "./ImportExamples.css";
 
-export default function ImportExamples() {
+export default function ImportExamples({ onImportSuccess }) {
 
   const [showModal, setShowModal] = useState(false);
   const [pendingData, setPendingData] = useState([]);
@@ -52,7 +52,10 @@ export default function ImportExamples() {
         );
       }
 
-      alert("Importado 🚀");
+ 
+      if (onImportSuccess) {
+   onImportSuccess();
+}
       setShowModal(false);
 
     } catch (err) {

@@ -97,11 +97,12 @@ function Comment() {
                         </button>
                     )}
                 </form>
-                 <div className="home-export-examples">
-                    <ExportExamples data={comments}/>
+                <div className="home-export-examples">
+                    <ExportExamples data={comments} />
                 </div>
                 <div className="home-import-examples">
-                    <ImportExamples />
+                    <ImportExamples onImportSuccess={getAllComments} />
+
                 </div>
             </div>
 
@@ -119,7 +120,7 @@ function Comment() {
                     </div>
                 ))}
 
-               
+
             </div>
         </div>
     );
