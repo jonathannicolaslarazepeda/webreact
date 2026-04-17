@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'; // IMPORTANTE: Siempre arriba
 import CommentsService from '../../services/comments.service';
+import ExportExamples from "../../components/export-examples/ExportExamples";
+import ImportExamples from "../../components/import-examples/ImportExamples";
 
 function Comment() {
     // 1. Estados
@@ -59,7 +61,7 @@ function Comment() {
         if (editingKey) {
             CommentsService.updateComment(editingKey, { user, email, subject, comment })
                 .then(() => {
-                    setComments(prev => 
+                    setComments(prev =>
                         prev.map(c => c.key === editingKey ? { key: editingKey, user, email, subject, comment } : c)
                     );
                     setEditingKey(null);
@@ -88,7 +90,7 @@ function Comment() {
                     <button className="enviar" type="submit">
                         {editingKey ? "Actualizar" : "Enviar"}
                     </button>
-                    
+
                     {editingKey && (
                         <button className="enviar" type="button" onClick={() => { setEditingKey(null); refForm.current.reset(); }}>
                             Cancelar
@@ -110,6 +112,13 @@ function Comment() {
                         <button className="enviar" onClick={() => removeComments(comment.key)}>Borrar</button>
                     </div>
                 ))}
+
+                <div className="home-export-examples">
+                    <ExportExamples data={comments}/>
+                </div>
+                <div className="home-import-examples">
+                    <ImportExamples />
+                </div>
             </div>
         </div>
     );
