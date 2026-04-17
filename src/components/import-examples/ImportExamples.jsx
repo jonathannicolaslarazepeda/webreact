@@ -9,7 +9,7 @@ export default function ImportExamples() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // 🔥 Normaliza cualquier archivo (JSON / CSV / XML)
+  // esto convierte cualquier archivo en daa
   const normalizeData = (item) => {
     return {
       user: item.user || item.name || "",
@@ -24,12 +24,12 @@ export default function ImportExamples() {
       setError("");
       setLoading(true);
 
-      // 1. Abrir archivo
+      // Abres el archivo
       const result = await importFileToInternalJson();
 
       setInternalJson(result);
 
-      // 2. Confirmación
+      // 2. Confirmación (quitarlo )
       const confirmImport = window.confirm(
         "Se añadirán nuevos comentarios a Firebase. ¿Continuar?"
       );
@@ -73,8 +73,8 @@ export default function ImportExamples() {
   };
 
    return (
-    <>
-      <h1>Import Examples</h1>
+    <div className="importation">
+      <h3 className="title">Importar Comentarios</h3>
 
       <div className="import-buttons">
 
@@ -83,6 +83,6 @@ export default function ImportExamples() {
         </button>
 
       </div>
-    </>
+    </div>
   );
 }

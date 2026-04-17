@@ -4,13 +4,13 @@ import { saveFileInFormat } from "../../utils/file-export";
 function ExportExamples({ data }) {
 
   return (
-    <>
-      <h1>Export Firebase Data</h1>
+    <div className="exportation">
+      <h3 className="title">Exporta los Comentarios</h3>
 
       <div className="export-buttons">
 
         <button onClick={() => saveFileInFormat("json", data, "comments.json")}>
-          Export JSON
+          JSON
         </button>
 
         <button
@@ -18,7 +18,7 @@ function ExportExamples({ data }) {
             saveFileInFormat("csv", data, "comments.csv")
           }
         >
-          Export CSV
+          CSV
         </button>
 
         <button
@@ -26,11 +26,11 @@ function ExportExamples({ data }) {
             saveFileInFormat("xml", data, "comments.xml")
           }
         >
-          Export XML
+          XML
         </button>
 
       </div>
-    </>
+    </div>
   );
 }
 

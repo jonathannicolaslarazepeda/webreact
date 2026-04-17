@@ -97,6 +97,12 @@ function Comment() {
                         </button>
                     )}
                 </form>
+                 <div className="home-export-examples">
+                    <ExportExamples data={comments}/>
+                </div>
+                <div className="home-import-examples">
+                    <ImportExamples />
+                </div>
             </div>
 
             <div className="contact-right">
@@ -113,12 +119,7 @@ function Comment() {
                     </div>
                 ))}
 
-                <div className="home-export-examples">
-                    <ExportExamples data={comments}/>
-                </div>
-                <div className="home-import-examples">
-                    <ImportExamples />
-                </div>
+               
             </div>
         </div>
     );
