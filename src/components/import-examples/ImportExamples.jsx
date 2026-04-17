@@ -5,52 +5,44 @@ import "./ImportExamples.css";
 
 export default function ImportExamples() {
 
-  const [internalJson, setInternalJson] = useState(null);
-  const [error, setError] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [pendingData, setPendingData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  // esto convierte cualquier archivo en daa
-  const normalizeData = (item) => {
-    return {
-      user: item.user || item.name || "",
-      email: item.email || "",
-      subject: item.subject || item.year || "",
-      comment: item.comment || item.population || ""
-    };
-  };
+  const normalizeData = (item) => ({
+    user: item.user || item.name || "",
+    email: item.email || "",
+    subject: item.subject || item.year || "",
+    comment: item.comment || item.population || ""
+  });
 
   const handleImport = async () => {
     try {
-      setError("");
       setLoading(true);
 
-      // Abres el archivo
       const result = await importFileToInternalJson();
 
-      setInternalJson(result);
-
-      // 2. Confirmación (quitarlo )
-      const confirmImport = window.confirm(
-        "Se añadirán nuevos comentarios a Firebase. ¿Continuar?"
-      );
-
-      if (!confirmImport) {
-        setLoading(false);
-        return;
-      }
-
-      // 3. Asegurar array válido
       const rows = Array.isArray(result.data)
         ? result.data
         : [result.data];
 
-      // 4. Importar a Firebase
-      for (const item of rows) {
+      setPendingData(rows);
+      setShowModal(true);
 
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const confirmImport = async () => {
+    try {
+      setLoading(true);
+
+      for (const item of pendingData) {
         const comment = normalizeData(item);
-
-        // evitar vacíos
-        if (!comment.user && !comment.email && !comment.comment) continue;
 
         await CommentsService.addComment(
           comment.user,
@@ -60,29 +52,45 @@ export default function ImportExamples() {
         );
       }
 
-      alert("Comentarios importados correctamente 🚀");
+      alert("Importado 🚀");
+      setShowModal(false);
 
     } catch (err) {
-      if (err?.name === "AbortError") return;
-
-      setError(err.message || "Error importando archivo");
-
+      setError(err.message);
     } finally {
       setLoading(false);
     }
   };
 
-   return (
+  return (
     <div className="importation">
       <h3 className="title">Importar Comentarios</h3>
-
       <div className="import-buttons">
-
         <button onClick={handleImport}>
           {loading ? "Importando..." : "Import File"}
         </button>
 
+        {showModal && (
+          <div className="modal-overlay">
+            <div className="modal-box">
+
+              <h2 className="title">¿Añadir Comentarios?</h2>
+
+              <button onClick={confirmImport}>
+                Confirmar
+              </button>
+
+              <button onClick={() => setShowModal(false)}>
+                Cancelar
+              </button>
+
+            </div>
+          </div>
+
+        )}
       </div>
+      {error && <p>{error}</p>}
+
     </div>
   );
 }

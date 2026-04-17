@@ -1,5 +1,5 @@
 .importation {
-  background-color:  #fff6bc;;
+  background-color: #fff6bc;
   margin-top: 20px;
   padding: 10px;
   box-sizing: border-box;
@@ -8,13 +8,13 @@
 }
 
 .title {
-    text-align: center;
+  text-align: center;
 }
 
 .import-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .import-buttons button {
@@ -38,5 +38,53 @@
 }
 
 .import-buttons button:active {
+  transform: scale(0.97);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  text-align: center;
+  background: #fff6bc;
+  align-self: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 12px;
+  width: 350px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  background-color: grey;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-buttons:hover {
+  background-color: black;
+  color: white;
+  transform: scale(1.05);
+}
+
+.modal-buttons:active {
   transform: scale(0.97);
 }
