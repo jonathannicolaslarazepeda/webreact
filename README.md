@@ -123,10 +123,12 @@ https://webreact-abdab.web.app/
 
 <img width="1492" height="1020" alt="image" src="https://github.com/user-attachments/assets/71e36ade-3da4-4dce-a2a9-c8704a444843" />
 
-### Export Ejemples
+### Export Examples
 
 CSV - https://github.com/jonathannicolaslarazepeda/webreact/blob/main/public/export-examples/comments.csv
+
 JSON - https://github.com/jonathannicolaslarazepeda/webreact/blob/main/public/export-examples/comments.json
+
 XML - https://github.com/jonathannicolaslarazepeda/webreact/blob/main/public/export-examples/comments.xml
 
 ### 🤝 Contributing
